@@ -3,6 +3,8 @@ import dotenv from "dotenv";
 
 import connectDB from "./config/db.js";
 import employeeRoutes from "./routes/employeeRoutes.js";
+import authRoutes from "./routes/authRoutes.js"
+import authMiddleware from "./middleware/authMiddleware.js";
 
 dotenv.config();
 
@@ -21,7 +23,9 @@ app.get("/", (req, res) => {
 
 //rOUTE...........
 
-app.use("/api/employees", employeeRoutes);
+app.use("/api/auth", authRoutes);
+
+app.use("/api/employees", authMiddleware, employeeRoutes);
 
 const PORT = process.env.PORT || 5000;
 

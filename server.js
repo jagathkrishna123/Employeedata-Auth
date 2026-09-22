@@ -32,3 +32,16 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+
+// Admin
+// ├── GET employees       ✅
+// ├── POST employee       ✅
+// ├── PUT employee        ✅
+// └── DELETE employee     ✅
+
+// HR
+// ├── GET employees       ✅
+// ├── POST employee       ❌
+// ├── PUT employee        ❌
+// └── DELETE employee     ❌

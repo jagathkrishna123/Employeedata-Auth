@@ -35,3 +35,18 @@ const userSchema = new mongoose.Schema(
 const User = mongoose.model("User", userSchema);
 
 export default User;
+
+
+
+
+
+
+
+// test data............
+
+// {
+//   "name": "John",
+//   "email": "john@gmail.com",
+//   "password": "123456",
+//   "role": "admin"
+// }

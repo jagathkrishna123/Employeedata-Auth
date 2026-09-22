@@ -18,12 +18,14 @@ const authMiddleware = (req, res, next) => {
       });
     }
 
-    const decoded = jwt.verify(
+    const decoded = jwt.verify(     // Checks the JWT and gives back its payload if valid
       token,
       process.env.JWT_SECRET
     );
 
     req.user = decoded;
+    console.log("payload....",req.user);
+    
 
     next();
 
@@ -35,3 +37,10 @@ const authMiddleware = (req, res, next) => {
 };
 
 export default authMiddleware;
+
+
+
+// jwt.verify() checks several things
+// 1. Was the token signed with your secret?
+// 2. Has the token expired?
+// 3. If valid, it gives you the payload back(means whatever inside the payload part when u create the token.)

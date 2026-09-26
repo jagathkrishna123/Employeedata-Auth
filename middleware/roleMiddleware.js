@@ -11,3 +11,5 @@ const allowRoles = (...allowedRoles) => {
 };
 
 export default allowRoles;
+
+// allowRoles("hr")
